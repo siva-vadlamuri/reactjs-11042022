@@ -1,0 +1,8 @@
+.btn_primary {
+  background-color: blue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}

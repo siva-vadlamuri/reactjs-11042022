@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Never touch the DOM
+// There is two ways of creating component
+// 1 : class based components (ES6)
+// 2 : functional  components
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// JSX --> JavaScript and XML
+// XML --> We should have wrap all the elements in parent tag
+// Every tag should have a closing tag
+
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,0 +1,10 @@
+npx create-react-app app-name
+cd app-name
+npm start
+
+--> folder structure 
+--> Components --> Build block of an application which we can reuse
+
+--> Props: It stands for properties which is used to pass the data from parent component to child Components
+
+--> Props are immutable (which we cannot change)
