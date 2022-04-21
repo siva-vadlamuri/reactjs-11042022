@@ -21,8 +21,8 @@ const App = () => {
       </div> */}
 
       <Header />
-      <Counter />
-      {/* <ContactUs /> */}
+      {/* <Counter /> */}
+      <ContactUs />
       {/* <Conditional /> */}
       {/* <Users /> */}
     </div>
