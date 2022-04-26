@@ -31,7 +31,7 @@ class ContactUs extends React.Component {
     let emailErr = "";
     let phoneErr = "";
 
-    if (this.state.firstName.length <= 4) {
+    if (this.state.firstName.length < 4) {
       firstNameErr = "first name should be atleast 4 characters";
     }
     if (this.state.lastName.length < 1) {

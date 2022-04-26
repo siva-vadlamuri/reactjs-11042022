@@ -3,6 +3,7 @@ import Conditional from "./components/Conditional/Conditional";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Counter from "./components/Counter/Counter";
 import Header from "./components/Header/Header";
+import Pagination from "./components/Pagination/Pagination";
 import Users from "./components/Users/Users";
 
 const App = () => {
@@ -22,9 +23,10 @@ const App = () => {
 
       <Header />
       {/* <Counter /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
       {/* <Conditional /> */}
       {/* <Users /> */}
+      <Pagination />
     </div>
   );
 };
