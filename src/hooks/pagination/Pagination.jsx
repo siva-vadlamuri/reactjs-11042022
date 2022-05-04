@@ -1,14 +1,19 @@
-import React, { Component } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-export default class Pagination extends Component {
-  state = {
-    usersData: [],
-    pageNumber: 0,
+const Pagination = () => {
+  const [usersData, setUsersData] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
+  const btnRef = useRef(null);
+
+  const handleBtnClick = () => {
+    // console.dir(btnRef.current);
+    // if you mutate the reference object 'n' no of times the component will not rerender
+    btnRef.current.innerText = "Clicked";
   };
 
-  getDummyUsersData = async () => {
+  const getPaginationData = async () => {
     const response = await fetch(
-      `https://dummyapi.io/data/v1/user?page=${this.state.pageNumber}&limit=10`,
+      `https://dummyapi.io/data/v1/user?page=${pageNumber}&limit=10`,
       {
         method: "GET",
         headers: {
@@ -17,37 +22,32 @@ export default class Pagination extends Component {
       }
     );
     const data = await response.json();
-    console.log(data);
-    this.setState({ usersData: data.data });
+    setUsersData(data.data);
   };
+  // How you differeiacte between componentDidMount and ComponentDidUpdate
 
-  handleButtonClick = (num) => {
-    this.setState({ pageNumber: num });
-  };
+  // componentDidMount, componentDidUpdate,componentWillUnmount
+  useEffect(() => {
+    getPaginationData();
 
-  // when the component is update if you want to make a API call
+    return () => {
+      // cleanup the resources
+    };
+  }, [pageNumber]);
 
-  componentDidMount() {
-    this.getDummyUsersData();
-  }
+  // When you update the state the component will rerender
 
-  componentDidUpdate(prevsProps, prevsState) {
-    // When the state or props is updated (componentDidMount Will be called)
-    // why infinite loop of making API calls
-    // update straergy
-    if (prevsState.pageNumber !== this.state.pageNumber) {
-      this.getDummyUsersData();
-    }
-  }
-
-  render() {
-    return (
+  return (
+    <div>
+      <button onClick={handleBtnClick} ref={btnRef}>
+        Click Me
+      </button>
       <div>
-        {this.state.usersData.length ? (
+        {usersData.length ? (
           <div>
             <div className="container mt-4">
               <div className="row">
-                {this.state.usersData.map((user) => (
+                {usersData.map((user) => (
                   <div className="col-md-6 mt-3">
                     <div className="card p-5">
                       <div className="row">
@@ -76,7 +76,7 @@ export default class Pagination extends Component {
               <button
                 className="btn btn-info ml-2"
                 onClick={() => {
-                  this.handleButtonClick(num);
+                  setPageNumber(num);
                 }}
               >
                 {num}
@@ -92,6 +92,7 @@ export default class Pagination extends Component {
           </div>
         )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+export default Pagination;

@@ -8,3 +8,53 @@ npm start
 --> Props: It stands for properties which is used to pass the data from parent component to child Components
 
 --> Props are immutable (which we cannot change)
+
+
+--> State 
+
+--> The React was release on 2013 in JSconf as a open source 
+--> Never touch the DOM 
+--> Any DOM manipulations will be done by React DOM
+--> for bigger applications DOM manipulation are very expensive 
+--> React Was release Virtual DOM
+--> Virtual DOM is a copy of Real DOM
+
+--> Class components (ES6 class) And Functional Components
+--> From 2013 to 2019
+class components are called as statefull components 
+class components has the react features like life cycle menthods
+--> Making network calls will happend only in class components
+
+
+--> functional components are also called as stateless components
+
+--> In 2019 (React 16.8) hooks was released 
+--> Hooks are javascript functions which we can use state and life cycle in functional components
+
+
+Life Cycle menthods
+--> mounting phase 
+     --> constructor
+     --> set up state 
+     --> We cannot make side effect 
+
+     --> getDerivedStateFromProps()
+       --> sync the state from props
+       --> we cannot make a side effect 
+     
+     --> render method
+     --> All child components renders 
+
+
+     --> componentDidMount
+        --> We can cause the side effect (network call, localstore)
+
+  --> Updating Phase:
+      --> Update phase will occur, When the state or props is update the component will rerender   
+
+  --> unmounting phase
+      --> To cleanup the resources when the component is removed from the DOM      
+
+--> updating phase 
+--> unmount phase
+
