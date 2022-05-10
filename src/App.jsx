@@ -11,6 +11,7 @@ import UseEffectHook from "./hooks/effect/UseEffectHook";
 import Pagination from "./hooks/pagination/Pagination";
 import UseReducerHook from "./hooks/reducer/UseReducerHook";
 import UseStateHook from "./hooks/state/UseStateHook";
+import Routing from "./routing/Routing";
 
 // When you  use context
 // 1 We need to create the context
@@ -40,12 +41,13 @@ const App = () => {
       </div> */}
 
       <Header />
+      <Routing />
       {/* <Counter /> */}
       {/* <Pagination /> */}
       {/* <UserContext.Provider value={{ name: "shiva" }}>
         <Parent />
       </UserContext.Provider> */}
-      <UseReducerHook />
+      {/* <UseReducerHook /> */}
       {/* <UseStateHook /> */}
       {/* <UseEffectHook /> */}
       {/* <ContactUs /> */}

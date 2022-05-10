@@ -23,13 +23,17 @@ function UseReducerHook() {
   // type:"INCREMENT",payload:5
   // }
   // count
+  //  action_creators
+  const incrementCount = (count) => {
+    return { type: "INCREMENT", payload: count };
+  };
   return (
     <div>
       <p className="mx-3">{count}</p>
       <div className="mt-3">
         <button
           onClick={() => {
-            dispatch({ type: "INCREMENT", payload: 5 });
+            dispatch(incrementCount(5));
           }}
           className="btn btn-info ml-2"
         >

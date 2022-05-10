@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <img
-          src="https://www.achieversit.com/assets/images/logo-white.png"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            src="https://www.achieversit.com/assets/images/logo-white.png"
+            alt=""
+          />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,22 +24,19 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+              <Link className="nav-link" to="/contact-us">
+                Contact Us
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
+              <Link className="nav-link" to="/about-us">
+                About Us
+              </Link>
             </li>
           </ul>
         </div>

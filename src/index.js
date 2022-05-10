@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from "react-router-dom";
 
 // Never touch the DOM
 // There is two ways of creating component
@@ -11,4 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // XML --> We should have wrap all the elements in parent tag
 // Every tag should have a closing tag
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);

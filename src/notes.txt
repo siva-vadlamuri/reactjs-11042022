@@ -58,3 +58,30 @@ Life Cycle menthods
 --> updating phase 
 --> unmount phase
 
+
+
+// Hooks are javascript functions which we can hook the state and other react features in functional components 
+--> Rules Of Hooks 
+--> custom hook
+
+
+1) useState Hook
+2) useEffect hook
+3) useRef  
+4) useContext
+-->props drilling 
+5) useReducer Hook
+
+Multi page applications
+Single Page applications
+Only Part of a page will reload 
+
+For Routing between different pages (react-router-dom)
+
+
+--> Redux 
+    Redux is a state management library
+
+    1)Action
+    2)Action Creator 
+    They are javascript functions which return plain javascript object
